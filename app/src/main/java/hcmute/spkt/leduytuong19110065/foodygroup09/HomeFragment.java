@@ -1,0 +1,129 @@
+package hcmute.spkt.leduytuong19110065.foodygroup09;
+
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link HomeFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class HomeFragment extends Fragment {
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
+    public HomeFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment HomeFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static HomeFragment newInstance(String param1, String param2) {
+        HomeFragment fragment = new HomeFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+
+    }
+
+    private Spinner spnCity;
+    private Boolean isFirstOpen = true;
+
+    LinearLayout dish1;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        spnCity = (Spinner) view.findViewById(R.id.spnCity);
+
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.district, android.R.layout.simple_spinner_dropdown_item);
+        spnCity.setAdapter(arrayAdapter);
+        spnCity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (isFirstOpen)
+                {
+                   isFirstOpen = false;
+                }
+                else {
+                    Toast.makeText(getActivity(), "Selected:"+spnCity.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        dish1 = view.findViewById(R.id.dish_1);
+        dish1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveToShowDetailActivity();
+            }
+        });
+
+
+        LinearLayout btnCategoryPizza;
+        btnCategoryPizza = view.findViewById(R.id.btn_category_pizza);
+        btnCategoryPizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CategoryDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // Inflate the layout for this fragment
+        return view;
+    }
+
+    private void moveToShowDetailActivity(){
+        Intent intent = new Intent(getActivity(), ShowDetailActivity.class);
+        startActivity(intent);
+    }
+}

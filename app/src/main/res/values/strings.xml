@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Foody</string>
+    <string name="action_home">Home</string>
+    <string name="action_cart">Cart</string>
+    <string name="action_user">User</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="district">
+        <item>Thu Duc</item>
+        <item>Binh Thanh</item>
+        <item>Go Vap</item>
+        <item>District 1</item>
+        <item>District 9</item>
+    </string-array>
+
+    <string name="forgot_pass"><u>Forgot Password</u></string>
+    <string name="register"><u>Register</u></string>
+    <string name="login"><u>Login</u></string>
+</resources>

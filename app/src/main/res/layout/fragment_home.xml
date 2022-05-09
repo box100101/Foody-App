@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <LinearLayout
+            android:background="@drawable/color_primary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:weightSum="10">
+            <EditText
+                android:background="@drawable/border_radius_left"
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_height="40dp"
+                app:layout_anchor="@+id/appbar"
+                app:layout_anchorGravity="center"
+                android:drawableStart="@drawable/ic_search"
+                android:layout_weight="3.5"
+                android:paddingStart="10dp"
+                android:maxLines="1"
+                android:inputType="text"
+                android:hint="Search..."/>
+
+            <Spinner
+                android:id="@+id/spnCity"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="6.5"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="10dp"
+                android:background="@drawable/border_radius_right"          />
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Top food"
+                android:fontFamily="casual"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginStart="5dp"/>
+
+
+            <ViewFlipper
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:flipInterval="3000"
+                android:autoStart="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:inAnimation="@android:anim/slide_in_left"
+                android:outAnimation="@android:anim/slide_out_right">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/slide_1" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/slide_2" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/slide_3" />
+                </androidx.cardview.widget.CardView>
+
+            </ViewFlipper>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/space"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:fontFamily="casual"
+                android:layout_marginStart="3dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:layout_marginBottom="5dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="4">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sushi_category"
+                        android:background="@drawable/custom_bg_img_category"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Sushi"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/fastfood_category"
+                        android:background="@drawable/custom_bg_img_category"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Hamburger"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_category_pizza"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/custom_bg_img_category"
+                        android:padding="8dp"
+                        android:src="@drawable/pizza_category" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Pizza"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/milktea_category"
+                        android:background="@drawable/custom_bg_img_category"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Milk Tea"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="4">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/salad_icon"
+                        android:background="@drawable/custom_bg_img_category"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Salad"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/beefsteak"
+                        android:background="@drawable/custom_bg_img_category"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Beefsteak"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/custom_bg_img_category"
+                        android:padding="8dp"
+                        android:src="@drawable/cake_icon" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Cake"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/tokbokki_icon"
+                        android:background="@drawable/custom_bg_img_category"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Tokbokki"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/dish_1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:weightSum="10">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="5dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/pizza_1"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pizza"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pizza is a flat, round cake made from flour and yeast"
+                        android:textStyle="bold"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dish_2"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:weightSum="10">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="5dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/sushi"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sushimi"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sushi is a Japanese dish consisting of rice mixed with vinegar and other ingredients."
+                        android:textStyle="bold"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/dish_3"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:weightSum="10">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="5dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/tokbokki_1"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tokbokki sốt cay, phô mai"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Chuẩn vị Hàn không hề khó, từ vị sốt cay đến sốt phô mai."
+                        android:textStyle="bold"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dish_4"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:weightSum="10">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="5dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/hambuger_1"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hamburger bò, phô mai"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Thịt bò xay được làm từ 100% thịt bò Black Angus Úc tươi, đóng vỉ tại Úc, đảm bảo chất lượng cao cấp nhất."
+                        android:textStyle="bold"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/dish_5"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:weightSum="10">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="5dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/slide_1"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Beefsteak kiểu Pháp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Không giống các loại beefsteak phong cách Mỹ truyền thống, Le Monde mang đến cho thực khách hương vị bít tết kiểu Pháp tuy quen mà lạ, đầy lôi cuốn và mê hoặc."
+                        android:textStyle="bold"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dish_6"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:weightSum="10">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="5dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/cake_1"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bánh kem 7 màu"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Những chiếc bánh sinh nhật đẹp tặng người thương yêu được cho là đẹp thường có những màu sắc bắt  mắt, trang trọng hoặc tinh tế."
+                        android:textStyle="bold"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="80dp">
+
+                <LinearLayout
+                    android:id="@+id/dish_7"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:weightSum="10">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="5dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/salad_1"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Salad hoa quả"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Các loại salad không chỉ thanh mát, dễ ăn mà còn có thể giảm 12% lượng calo tiêu thụ."
+                        android:textStyle="bold"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dish_8"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:weightSum="10">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="5dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/milktea_1"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Trà sữa Taiwan"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Trà sữa Taiwan đến nay vẫn là một thứ đồ uống không thể vắng mặt trong các quán đồ uống vì nó đã trở nên nổi tiếng và phổ biến với hầu hết mọi người đặc biệt là giới trẻ."
+                        android:textStyle="bold"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

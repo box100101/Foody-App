@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="hcmute.spkt.leduytuong19110065.foodygroup09">
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FoodyInterfaceVer1">
+        <activity
+            android:name="hcmute.spkt.leduytuong19110065.foodygroup09.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="hcmute.spkt.leduytuong19110065.foodygroup09.MainActivity">
+        </activity>
+
+        <activity
+            android:name="hcmute.spkt.leduytuong19110065.foodygroup09.ShowDetailActivity">
+        </activity>
+
+        <activity
+            android:name="hcmute.spkt.leduytuong19110065.foodygroup09.RegisterActivity">
+        </activity>
+
+        <activity
+            android:name="hcmute.spkt.leduytuong19110065.foodygroup09.CategoryDetailActivity">
+        </activity>
+
+        <activity
+            android:name="hcmute.spkt.leduytuong19110065.foodygroup09.RestaurantActivity">
+        </activity>
+    </application>
+
+</manifest>
